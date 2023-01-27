@@ -8,7 +8,7 @@ import (
 	"github.com/afadian/fadian-telegram-bot/bot/middleware"
 )
 
-type RouterParams struct {
+type Params struct {
 	fx.In
 
 	Bot        *telebot.Bot
@@ -16,7 +16,7 @@ type RouterParams struct {
 	Middleware *middleware.Middleware
 }
 
-func Register(params *RouterParams) {
+func Register(params *Params) {
 	params.Bot.Use(params.Middleware.ContextInject)
 
 	{
