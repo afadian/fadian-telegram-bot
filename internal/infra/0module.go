@@ -11,5 +11,7 @@ func Module() fx.Option {
 	return fx.Module(
 		"infra",
 		fx.Invoke(Trace),
+		fx.Provide(InitDB),
+		fx.Invoke(Migrate),
 	)
 }

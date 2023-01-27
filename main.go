@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel"
@@ -11,13 +12,15 @@ import (
 )
 
 var (
-	ctx         = context.Background()
-	tracer      = otel.Tracer("main")
-	application *fx.App
+	ctx          = context.Background()
+	tracer       = otel.Tracer("main")
+	application  *fx.App
+	forceMigrate bool
 )
 
 func init() {
-	application = app.New(ctx)
+	flag.BoolVar(&forceMigrate, "force-migrate", false, "force migrate database")
+	application = app.New(ctx, forceMigrate)
 }
 
 func main() {

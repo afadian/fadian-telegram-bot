@@ -6,14 +6,16 @@ type system struct {
 }
 
 type database struct {
-	Type     string
-	Host     string
-	Port     int
-	Database string
-	User     string
-	Password string
-	Charset  string
-	DBFile   string
+	Type        string
+	Host        string
+	Port        int
+	Database    string
+	User        string
+	Password    string
+	Charset     string
+	SSLMode     string
+	DBFile      string
+	TablePrefix string
 }
 
 type telegram struct {

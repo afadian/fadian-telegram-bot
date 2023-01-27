@@ -9,13 +9,14 @@ import (
 
 var tracer = otel.Tracer("app")
 
-func New(ctx context.Context) *fx.App {
+func New(ctx context.Context, forceMigrate bool) *fx.App {
 	ctx, span := tracer.Start(ctx, "New")
 	defer span.End()
 
 	opts := []fx.Option{
 		fx.Supply(
 			fx.Annotate(ctx, fx.As(new(context.Context))),
+			forceMigrate,
 		),
 	}
 	opts = append(opts, Entry()...)

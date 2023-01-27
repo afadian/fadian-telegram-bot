@@ -6,6 +6,7 @@ import (
 	"github.com/AH-dark/fadian-telegram-bot/internal/env"
 	"github.com/AH-dark/fadian-telegram-bot/internal/infra"
 	"github.com/AH-dark/fadian-telegram-bot/internal/logger"
+	"github.com/AH-dark/fadian-telegram-bot/model"
 )
 
 func Entry() []fx.Option {
@@ -15,5 +16,6 @@ func Entry() []fx.Option {
 		fx.WithLogger(logger.FxLogger),
 
 		infra.Module(),
+		model.Module(),
 	}
 }
