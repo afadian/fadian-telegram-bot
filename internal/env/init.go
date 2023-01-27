@@ -2,10 +2,12 @@ package env
 
 import (
 	"context"
-	"github.com/AH-dark/fadian-telegram-bot/pkg/util"
+
 	"github.com/joho/godotenv"
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel"
+
+	"github.com/AH-dark/fadian-telegram-bot/pkg/util"
 )
 
 var tracer = otel.Tracer("env")

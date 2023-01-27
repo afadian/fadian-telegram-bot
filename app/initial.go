@@ -2,6 +2,7 @@ package app
 
 import (
 	"context"
+
 	"go.opentelemetry.io/otel"
 	"go.uber.org/fx"
 )
