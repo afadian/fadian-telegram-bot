@@ -1,8 +1,13 @@
 package env
 
 type system struct {
-	Debug     bool   `json:"debug"`
-	TracerDSN string `json:"tracer_dsn"`
+	Listen    string
+	Debug     bool
+	TracerDSN string
+	Secret    string
+	CertFile  string
+	KeyFile   string
+	PublicURL string
 }
 
 type database struct {
@@ -19,7 +24,11 @@ type database struct {
 }
 
 type telegram struct {
-	Token string
+	URL           string // default is https://api.telegram.org
+	Token         string
+	Updates       int
+	PollerTimeout int // in seconds
+	Offline       bool
 }
 
 type redis struct {

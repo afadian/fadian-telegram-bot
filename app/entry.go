@@ -8,6 +8,7 @@ import (
 	"github.com/afadian/fadian-telegram-bot/internal/infra"
 	"github.com/afadian/fadian-telegram-bot/internal/logger"
 	"github.com/afadian/fadian-telegram-bot/model"
+	"github.com/afadian/fadian-telegram-bot/server"
 )
 
 func Entry() []fx.Option {
@@ -18,5 +19,6 @@ func Entry() []fx.Option {
 
 		infra.Module(),
 		model.Module(),
+		server.Module(),
 	}
 }

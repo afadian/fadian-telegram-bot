@@ -24,9 +24,17 @@ func NewEnvConfig(ctx context.Context) *Config {
 		System: &system{
 			Debug:     util.EnvBool("SYSTEM_DEBUG", false),
 			TracerDSN: util.EnvString("SYSTEM_TRACER_DSN", "http://localhost:14268/api/traces"),
+			Listen:    util.EnvString("SYSTEM_LISTEN", ":8080"),
+			PublicURL: util.EnvString("SYSTEM_PUBLIC_URL", "http://localhost:8080"),
+			CertFile:  util.EnvString("SYSTEM_CERT_FILE", ""),
+			KeyFile:   util.EnvString("SYSTEM_KEY_FILE", ""),
 		},
 		Telegram: &telegram{
-			Token: util.EnvString("TELEGRAM_TOKEN", ""),
+			URL:           util.EnvString("TELEGRAM_URL", "https://api.telegram.org"),
+			Token:         util.EnvString("TELEGRAM_TOKEN", ""),
+			Updates:       util.EnvInt("TELEGRAM_UPDATES", 100),
+			PollerTimeout: util.EnvInt("TELEGRAM_POLLER_TIMEOUT", 30),
+			Offline:       util.EnvBool("TELEGRAM_OFFLINE", false),
 		},
 		Database: &database{
 			Type:        util.EnvString("DATABASE_TYPE", "sqlite3"),
