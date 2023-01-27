@@ -8,7 +8,7 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.uber.org/fx"
 
-	"github.com/AH-dark/fadian-telegram-bot/app"
+	"github.com/afadian/fadian-telegram-bot/app"
 )
 
 var (

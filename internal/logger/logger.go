@@ -2,7 +2,7 @@ package logger
 
 import (
 	"context"
-	"github.com/AH-dark/fadian-telegram-bot/internal/env"
+	"github.com/afadian/fadian-telegram-bot/internal/env"
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel"
 	"os"

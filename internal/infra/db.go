@@ -3,20 +3,26 @@ package infra
 import (
 	"context"
 	"fmt"
-	"github.com/AH-dark/fadian-telegram-bot/internal/env"
-	"github.com/AH-dark/fadian-telegram-bot/model"
+	"time"
+
+	// external
 	gorm_logrus "github.com/onrik/gorm-logrus"
 	"github.com/sirupsen/logrus"
 	"github.com/uptrace/opentelemetry-go-extra/otelgorm"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
+
+	// gorm
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
 	"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
-	"time"
+
+	// internal
+	"github.com/afadian/fadian-telegram-bot/internal/env"
+	"github.com/afadian/fadian-telegram-bot/model"
 )
 
 func InitDB(ctx context.Context, config *env.Config) (*gorm.DB, error) {

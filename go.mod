@@ -1,4 +1,4 @@
-module github.com/AH-dark/fadian-telegram-bot
+module github.com/afadian/fadian-telegram-bot
 
 go 1.19
 

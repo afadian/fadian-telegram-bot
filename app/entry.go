@@ -3,10 +3,11 @@ package app
 import (
 	"go.uber.org/fx"
 
-	"github.com/AH-dark/fadian-telegram-bot/internal/env"
-	"github.com/AH-dark/fadian-telegram-bot/internal/infra"
-	"github.com/AH-dark/fadian-telegram-bot/internal/logger"
-	"github.com/AH-dark/fadian-telegram-bot/model"
+	// internal
+	"github.com/afadian/fadian-telegram-bot/internal/env"
+	"github.com/afadian/fadian-telegram-bot/internal/infra"
+	"github.com/afadian/fadian-telegram-bot/internal/logger"
+	"github.com/afadian/fadian-telegram-bot/model"
 )
 
 func Entry() []fx.Option {

@@ -3,8 +3,11 @@ package infra
 import (
 	"context"
 
+	// external
 	"github.com/sirupsen/logrus"
 	"github.com/uptrace/opentelemetry-go-extra/otellogrus"
+
+	// otel
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/exporters/jaeger"
@@ -12,7 +15,8 @@ import (
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
 
-	"github.com/AH-dark/fadian-telegram-bot/internal/env"
+	// internal
+	"github.com/afadian/fadian-telegram-bot/internal/env"
 )
 
 const (

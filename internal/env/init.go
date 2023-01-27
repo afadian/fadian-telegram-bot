@@ -7,7 +7,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel"
 
-	"github.com/AH-dark/fadian-telegram-bot/pkg/util"
+	"github.com/afadian/fadian-telegram-bot/pkg/util"
 )
 
 var tracer = otel.Tracer("env")
