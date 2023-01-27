@@ -19,12 +19,17 @@ var (
 )
 
 func init() {
+	ctx, span := tracer.Start(ctx, "initialization")
+	defer span.End()
+
 	flag.BoolVar(&forceMigrate, "force-migrate", false, "force migrate database")
+	flag.Parse()
+
 	application = app.New(ctx, forceMigrate)
 }
 
 func main() {
-	ctx, span := tracer.Start(ctx, "main")
+	ctx, span := tracer.Start(ctx, "application")
 	defer span.End()
 
 	logrus.WithContext(ctx).Info("Prepared to run application")
