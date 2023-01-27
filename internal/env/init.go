@@ -24,8 +24,8 @@ func NewEnvConfig(ctx context.Context) *Config {
 		System: &system{
 			Debug:     util.EnvBool("SYSTEM_DEBUG", false),
 			TracerDSN: util.EnvString("SYSTEM_TRACER_DSN", "http://localhost:14268/api/traces"),
-			Listen:    util.EnvString("SYSTEM_LISTEN", ":8080"),
-			PublicURL: util.EnvString("SYSTEM_PUBLIC_URL", "http://localhost:8080"),
+			Listen:    util.EnvString("SYSTEM_LISTEN", ":8443"),
+			PublicURL: util.EnvString("SYSTEM_PUBLIC_URL", "https://localhost:8443"),
 			CertFile:  util.EnvString("SYSTEM_CERT_FILE", ""),
 			KeyFile:   util.EnvString("SYSTEM_KEY_FILE", ""),
 		},

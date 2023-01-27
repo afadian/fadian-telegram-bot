@@ -6,7 +6,7 @@ import (
 	"gopkg.in/telebot.v3"
 )
 
-func ContextInject(fn telebot.HandlerFunc) telebot.HandlerFunc {
+func (mw *Middleware) ContextInject(fn telebot.HandlerFunc) telebot.HandlerFunc {
 	ctx := context.Background()
 	ctx, span := tracer.Start(ctx, "bot-request-inject")
 	defer span.End()

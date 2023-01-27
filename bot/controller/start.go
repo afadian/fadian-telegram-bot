@@ -7,7 +7,7 @@ import (
 	"gopkg.in/telebot.v3"
 )
 
-func StartHandler(c telebot.Context) error {
+func (ctr *Controller) StartHandler(c telebot.Context) error {
 	ctx, span := tracer.Start(c.Get("context").(context.Context), "start-handler")
 	defer span.End()
 

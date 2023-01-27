@@ -11,7 +11,7 @@ import (
 	"github.com/afadian/fadian-telegram-bot/internal/env"
 )
 
-var tracer = otel.Tracer("server.router")
+var tracer = otel.Tracer("bot.router")
 
 func NewBot(ctx context.Context, config *env.Config) (*telebot.Bot, error) {
 	ctx, span := tracer.Start(ctx, "new-router")

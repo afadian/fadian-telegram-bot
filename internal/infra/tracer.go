@@ -20,7 +20,7 @@ import (
 )
 
 const (
-	service     = "fadian-telegram-bot-server"
+	service     = "fadian-telegram-bot-bot"
 	environment = "production"
 	id          = 1
 )

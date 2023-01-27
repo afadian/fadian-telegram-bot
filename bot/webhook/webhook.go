@@ -10,7 +10,7 @@ import (
 	"github.com/afadian/fadian-telegram-bot/pkg/util"
 )
 
-var tracer = otel.Tracer("server.webhook")
+var tracer = otel.Tracer("bot.webhook")
 
 func NewWebhook(ctx context.Context, config *env.Config) *telebot.Webhook {
 	ctx, span := tracer.Start(ctx, "new-webhook")
